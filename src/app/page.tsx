@@ -109,15 +109,14 @@ export default function Home() {
               ))}
             </h1>
             <p className="text-lg max-w-4xl">
-              I'm a Full Stack Developer who finds great satisfaction when the
-              code works after one run. Of course, that's unrealistic, so I
-              strive to write clean code that is easy to understand and
-              maintain, in hopes that the next developer (probably me when I
-              revisit the code) who looks at my code doesn't go crazy.
+              {
+                "I'm a Full Stack Developer who finds great satisfaction when the code works after one run. Of course, that's unrealistic, so I strive to write clean code that is easy to understand and maintain, in hopes that the next developer (probably me when I revisit the code) who looks at my code doesn't go crazy."
+              }
               <br></br>
               <br></br>
-              Actively seeking job opportunities where I can utilise my skills
-              and contribute to exciting projects!
+              {
+                "Actively seeking job opportunities where I can utilise my skills and contribute to exciting projects!"
+              }
             </p>
           </div>
           <motion.div
