@@ -195,8 +195,9 @@ export default function Home() {
               <Github className="w-5 h-5" />
               <span>GitHub</span>
             </a>
+            {/* Add the repo name for deployment */}
             <a
-              href="/jaey8den-portfolio/LimJiaLe-Resume.docx"
+              href="/jaey8den-portfolio/LimJiaLe-Resume.pdf"
               download
               className="flex items-center gap-2 px-4 py-2 bg-yellow-400 text-black rounded-lg shadow hover:bg-yellow-500 transition-colors"
             >
