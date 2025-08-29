@@ -9,8 +9,8 @@ const experiences = [
     company: "Transcentech Pte. Ltd.",
     date: "Jan 2024 – Oct 2024",
     points: [
-      "Optimised stored procedures, improving execution times by 10%",
-      "Introduced logging systems for debugging & security",
+      "Optimised stored procedures, shortening rendering times by 10%",
+      "Introduced logging in entire systems for debugging & security",
       "Supported user testing & deployments",
     ],
     skills: ".Net, SSMS, Redis",
@@ -31,8 +31,8 @@ const experiences = [
     company: "MegaAdventure",
     date: "Mar 2019 – Aug 2019",
     points: [
-      "Facilitated the safety of participants attempting the high elements, adapting to any unforseen unforeseen cirumstances",
-      "Collaborated with team members to ensure smooth operations by proactively offering support and swapping responsibilities",
+      "Facilitated the safety of participants attempting high elements, adapting to emergencies",
+      "Collaborated with team members to ensure smooth operations by proactively offering support",
     ],
     skills: "Teamwork, Initiative",
   },
@@ -120,7 +120,9 @@ function TimelineItem({ exp, align }) {
         </motion.ul>
 
         {/* Pin indicator (optional) */}
-        {pinned && <Pin color="yellow" className="mt-3 w-5 h-5"></Pin>}
+        {pinned && (
+          <Pin className="text-blue-600 dark:text-yellow-400 mt-3 w-5 h-5"></Pin>
+        )}
       </motion.div>
 
       {/* Circle on the timeline */}
