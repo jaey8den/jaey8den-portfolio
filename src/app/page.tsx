@@ -7,6 +7,8 @@ import Image from "next/image";
 import ExperienceTimeline from "./components/ExperienceTimeline.jsx";
 import Projects from "./components/Projects.jsx";
 
+import introPortrait from "./assets/intro-portrait.jpg";
+
 // import { VT323 } from "next/font/google";
 
 // const vt323 = VT323({
@@ -123,7 +125,7 @@ export default function Home() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <Image
-              src="/intro-portrait.jpg"
+              src={introPortrait}
               alt="Lim Jia Le Portrait"
               fill
               className="object-cover rounded-full shadow-lg"
@@ -194,7 +196,7 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             <a
-              href="/LimJiaLe-Resume.docx"
+              href="/jaey8den-portfolio/LimJiaLe-Resume.docx"
               download
               className="flex items-center gap-2 px-4 py-2 bg-yellow-400 text-black rounded-lg shadow hover:bg-yellow-500 transition-colors"
             >
