@@ -5,20 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Image from "next/image";
-import web1 from "../assets/website/web1.gif";
-import web2 from "../assets/website/web2.gif";
-import cdg1 from "../assets/cdg/cdg-1.png";
-import cdg2 from "../assets/cdg/cdg-2.png";
-import bbb1 from "../assets/bbb/bbb-1.png";
-import jio1 from "../assets/jio/jio-1.png";
-import jio2 from "../assets/jio/jio-2.png";
-import jio3 from "../assets/jio/jio-3.png";
 
 // Example data (replace with your own)
 const projects = [
   {
     title: "Portfolio Website",
-    screenshots: [web1, web2],
+    screenshots: ["/website/web1.gif", "/website/web2.gif"],
     points: [
       "Built with Next.js and Tailwind CSS",
       "Fully responsive and interactive layout",
@@ -32,7 +24,7 @@ const projects = [
   },
   {
     title: "Crochet Diagram Generator",
-    screenshots: [cdg1, cdg2],
+    screenshots: ["/cdg/cdg-1.png", "/cdg/cdg-2.png"],
     points: [
       "Developed a program with turtle to generate diagrams from crochet text instructions",
       "Deployed on Render to process user input and return the corresponding diagram",
@@ -47,7 +39,7 @@ const projects = [
   },
   {
     title: "Badminton Ballot Bot",
-    screenshots: [bbb1],
+    screenshots: ["/bbb/bbb-1.png"],
     points: [
       "Wrote a function to call a telegram API to send ballot links to a group chat",
       "Deployed the function on Google Cloud and created a scheduled job to run it daily",
@@ -61,7 +53,7 @@ const projects = [
   },
   {
     title: "JIO",
-    screenshots: [jio1, jio2, jio3],
+    screenshots: ["/jio/jio-1.png", "/jio/jio-2.png", "/jio/jio-3.png"],
     points: [
       "Replicated a multiplayer application using Unity3D",
       "Deployed a database on AWS for authentication and inventory",
