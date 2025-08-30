@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   /* For none custom domain */
-  // basePath: "/jaey8den-portfolio",
-  // assetPrefix: "/jaey8den-portfolio/",
+  basePath: "/jaey8den-portfolio",
+  assetPrefix: "/jaey8den-portfolio/",
   /* For custom domain */
-  basePath: "",
-  assetPrefix: "/",
+  // basePath: "",
+  // assetPrefix: "/",
 };
 
 export default nextConfig;
