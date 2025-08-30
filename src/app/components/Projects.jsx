@@ -26,7 +26,7 @@ const projects = [
     details: [
       "What better way to prove React experience than having a website built with NextJS to showcase my portfolio?",
       "This website lists my work experiences and my more notable projects, personal or academic. I have attempted to make this website more modern and interactive, and pleasant to browse. Please feel free to read the backgrounds for my projects! (although they might be a bit long)",
-      "P.S. Try resizing your window!",
+      "P.S. Try resizing your window or visit on your phone!",
     ],
     skills: ["NextJS, TailwindCSS"],
   },
@@ -36,14 +36,14 @@ const projects = [
     points: [
       "Developed a program with turtle to generate diagrams from crochet text instructions",
       "Deployed on Render to process user input and return the corresponding diagram",
-      "Refactored using konva to be compatible with HTML, simplifying integration into Wordpress",
+      "Refactored using konva to be compatible with HTML, simplifying integration into WordPress",
     ],
     details: [
       "My friend, who is a crocheter, has to spend a significant amount of time to manually draw the diagrams after developing a crochet design. She tried to find existing services that could perform the conversion from text to diagram accurately, but could not. Thus, she proposed that there will be a demand for such a service, and commissioned me to develop such a program.",
-      "I started with a python library, turtle, to draw the stitches and developed the logic to determine their angles and positions. Since the diagram is generated in the backend, I had to deploy an API to handle that. However, Wordpress only accepts data in JSON or PHP from an API, thus I had to encode and decode the image to display on Wordpress. The real problem arose when I tried to call the API, only to realise that Render is unable to provide a virtual display for turtle to 'draw' on. After further testing and researching, I decided it was prohibitively difficult to continue and looked alternatives.",
-      "Then I stumbled upon konva, another drawing library but for Javscript. The biggest difference for me is that it performs client side rendering, which avoid all the problems I had with turtle. As a bonus, it is made to be used with HTML. In Wordpress, I can insert a HTML block within the page and call it a day. After refactoring the logic I had in python to javascript, I had a functioning Crochet Diagram Generator ready to be integrated into Wordpress.",
+      "I started with a python library, turtle, to draw the stitches and developed the logic to determine their angles and positions. Since the diagram is generated in the backend, I had to deploy an API to handle that. However, WordPress only accepts data in JSON or PHP from an API, thus I had to encode and decode the image to display on Wordpress. The real problem arose when I tried to call the API, only to realise that Render is unable to provide a virtual display for turtle to 'draw' on. After further testing and researching, I decided it was prohibitively difficult to continue and looked alternatives.",
+      "Then I stumbled upon konva, another drawing library but for Javscript. The biggest difference for me is that it performs client side rendering, which avoid all the problems I had with turtle. As a bonus, it is made to be used with HTML. I can insert a HTML block within the page, upload the functions and call it a day, all done within WordPress itself. After refactoring the logic I had in python to javascript, I had a functioning Crochet Diagram Generator ready to be integrated into WordPress.",
     ],
-    skills: ["FastAPI, Render, turtle, konva, Python, NodeJS"],
+    skills: ["FastAPI, Render, turtle, konva, WordPress, Python, NodeJS"],
   },
   {
     title: "Badminton Ballot Bot",
