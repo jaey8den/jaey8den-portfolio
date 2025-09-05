@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Image from "next/image";
 
-// Example data (replace with your own)
 const projects = [
   {
     title: "Portfolio Website",
@@ -18,9 +17,11 @@ const projects = [
     details: [
       "What better way to prove React experience than having a website built with NextJS to showcase my portfolio?",
       "This website lists my work experiences and my more notable projects, personal or academic. I have attempted to make this website more modern and interactive, and pleasant to browse. Please feel free to read the backgrounds for my projects! (although they might be a bit long)",
-      "P.S. Try resizing your window or visit on your phone!",
+      "P.S. Resize your window or visit on your phone.",
+      "P.S.S Toggle light and dark mode.",
     ],
     skills: ["NextJS, TailwindCSS, Git"],
+    link: ["https://limjiale.com", "Website"],
   },
   {
     title: "Crochet Diagram Generator",
@@ -36,6 +37,10 @@ const projects = [
       "Then I stumbled upon konva, another drawing library but for Javscript. The biggest difference for me is that it performs client side rendering, which avoid all the problems I had with turtle. As a bonus, it is made to be used with HTML. I can insert a HTML block within the page, upload the functions and call it a day, all done within WordPress itself. After refactoring the logic I had in python to javascript, I had a functioning Crochet Diagram Generator ready to be integrated into WordPress.",
     ],
     skills: ["FastAPI, Render, S3, turtle, konva, WordPress, Python, NodeJS"],
+    link: [
+      "https://thelilipath.com/crochet-diagram-generator/",
+      "The LILI Path",
+    ],
   },
   {
     title: "Badminton Ballot Bot",
@@ -50,6 +55,7 @@ const projects = [
       "The template is on my Github along with instructions. With a bot token and chat id, anyone can use it.",
     ],
     skills: ["Google Cloud, Git, Python"],
+    link: [],
   },
   {
     title: "JIO",
@@ -64,6 +70,7 @@ const projects = [
       "This was a 10 man academic project. I was mostly tasked with the design of maps, tilesets, sprites, and the designing and deployment of relational databases for user authentication and inventory.",
     ],
     skills: ["Unity3D, EC2, Photoshop, C#, MySQL"],
+    link: [],
   },
 ];
 
@@ -105,6 +112,19 @@ function ProjectCard({ project }) {
     >
       {/* Title */}
       <h3 className="text-2xl font-semibold">{project.title}</h3>
+
+      {/* Link */}
+      {project.link ? (
+        <a
+          href={project.link[0]}
+          target="_blank"
+          noopener="true"
+          noreferrer="true"
+          className="text-blue-600 dark:text-yellow-300 hover:underline italic"
+        >
+          {project.link[1]}
+        </a>
+      ) : null}
 
       {/* Slideshow */}
       <div className="relative w-full h-96 overflow-hidden rounded-lg flex items-center justify-center bg-gray-100 dark:bg-gray-800">

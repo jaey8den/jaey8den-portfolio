@@ -7,13 +7,6 @@ import Image from "next/image";
 import ExperienceTimeline from "./components/ExperienceTimeline.jsx";
 import Projects from "./components/Projects.jsx";
 
-// import { VT323 } from "next/font/google";
-
-// const vt323 = VT323({
-//   subsets: ["latin"],
-//   weight: "400",
-// });
-
 export default function Home() {
   const introText = "Hi, I'm Lim Jia Le";
 
