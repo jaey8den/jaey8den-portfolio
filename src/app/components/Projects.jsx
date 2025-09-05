@@ -120,7 +120,7 @@ function ProjectCard({ project }) {
           target="_blank"
           noopener="true"
           noreferrer="true"
-          className="text-blue-600 dark:text-yellow-300 hover:underline italic"
+          className="text-blue-600 dark:text-yellow-300 underline w-fit hover:text-yellow-300 dark:hover:text-blue-400"
         >
           {project.link[1]}
         </a>
