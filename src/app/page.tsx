@@ -6,6 +6,7 @@ import { Menu, X, Phone, Mail, Linkedin, Github, FileDown } from "lucide-react";
 import Image from "next/image";
 import ExperienceTimeline from "./components/ExperienceTimeline.jsx";
 import Projects from "./components/Projects.jsx";
+import Archives from "./components/Archives.jsx";
 
 export default function Home() {
   const introText = "Hi, I'm Lim Jia Le";
@@ -141,6 +142,9 @@ export default function Home() {
 
         {/* Projects */}
         <Projects></Projects>
+
+        {/* Archives */}
+        <Archives></Archives>
       </main>
       {/* Contact */}
       <footer

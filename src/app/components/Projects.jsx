@@ -172,6 +172,8 @@ function ProjectCard({ project }) {
           <li key={i}>{point}</li>
         ))}
       </ul>
+
+      {/* Skills */}
       <p className="text-xl font-semibold">Skills</p>
       <p className="italic">{project.skills}</p>
 

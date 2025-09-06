@@ -40,7 +40,7 @@ const experiences = [
 
 export default function ExperienceTimeline() {
   return (
-    <section id="experience" className="min-h-screen py-4 max-w-368 mx-auto">
+    <section id="experience" className="h-fit py-4 max-w-368 mx-auto">
       <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
 
       <div className="relative w-full">
