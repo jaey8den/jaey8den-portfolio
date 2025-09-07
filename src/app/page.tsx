@@ -18,6 +18,7 @@ export default function Home() {
     { id: "intro", label: "Intro" },
     { id: "experience", label: "Work Experience" },
     { id: "projects", label: "Projects" },
+    { id: "archives", label: "Archives" },
     // { id: "skills", label: "Skills" },
     { id: "contact", label: "Contact" },
   ];

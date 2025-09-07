@@ -82,7 +82,7 @@ export default function Archives() {
                 <h3 className="text-xl font-semibold mb-2">{selected.title}</h3>
 
                 {/* Slideshow */}
-                <div className="relative w-full h-96 overflow-hidden rounded-lg flex items-center justify-center bg-gray-100 dark:bg-gray-800 py-4">
+                <div className="relative w-full h-96 overflow-hidden rounded-lg flex items-center justify-center bg-gray-100 dark:bg-gray-700 py-4">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={current}
@@ -120,10 +120,9 @@ export default function Archives() {
                     />
                   </button>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 my-4">
                   {selected.description}
                 </p>
-                <br></br>
 
                 {/* Skills */}
                 <p className="text-xl font-semibold pb-2">Skills</p>
