@@ -35,6 +35,17 @@ const archivedProjects = [
       "An online apparel store. Using databases and session variables to keep stock and cart items.",
     skills: "php, MySQL, CSS, Javascript",
   },
+  {
+    title: "JIO (2021)",
+    screenshots: [
+      "/archives/jio/jio-1.png",
+      "/archives/jio/jio-2.png",
+      "/archives/jio/jio-3.png",
+    ],
+    description:
+      "An productivity app connecting users virtually in a game-like environment, posed as cats.",
+    skills: "Unity3D, EC2, Photoshop, C#, MySQL",
+  },
 ];
 
 export default function Archives() {

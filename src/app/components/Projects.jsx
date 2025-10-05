@@ -57,21 +57,6 @@ const projects = [
     skills: ["Google Cloud, Git, Python"],
     link: [],
   },
-  {
-    title: "JIO",
-    screenshots: ["/jio/jio-1.png", "/jio/jio-2.png", "/jio/jio-3.png"],
-    points: [
-      "Replicated a multiplayer application using Unity3D",
-      "Deployed a database on AWS for authentication and inventory",
-      "Designed tile sets, maps and sprites using Photoshop",
-    ],
-    details: [
-      "JIO is an app to allow users to connect virtually in a game-like environment, posed as cats. It is inspired by the Forest & Gather app, and is primarily a productivity app.",
-      "This was a 10 man academic project. I was mostly tasked with the design of maps, tilesets, sprites, and the designing and deployment of relational databases for user authentication and inventory.",
-    ],
-    skills: ["Unity3D, EC2, Photoshop, C#, MySQL"],
-    link: [],
-  },
 ];
 
 export default function Projects() {
