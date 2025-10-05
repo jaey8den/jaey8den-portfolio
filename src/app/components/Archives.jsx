@@ -9,7 +9,11 @@ import Image from "next/image";
 const archivedProjects = [
   {
     title: "Victora Chorale (2023)",
-    screenshots: ["/archives/victoria-chorale/vic-chorale.gif"],
+    screenshots: [
+      "/archives/victoria-chorale/vc-1.png",
+      "/archives/victoria-chorale/vc-2.png",
+      "/archives/victoria-chorale/vc-3.png",
+    ],
     description: "Victoria Chorale home page. Never deployed.",
     skills: "php, CSS, Javascript",
   },
