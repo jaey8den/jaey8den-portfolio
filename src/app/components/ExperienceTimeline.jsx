@@ -9,9 +9,9 @@ const experiences = [
     company: "Transcentech Pte. Ltd.",
     date: "Jan 2024 – Oct 2024",
     points: [
-      "Optimised stored procedures, shortening rendering times by 10%",
+      "Identified bottlenecks and optimised stored procedures, shortening rendering times by 10%",
       "Introduced logging in entire systems for debugging & security",
-      "Supported user testing & deployments",
+      "Wrote test cases and supported user acceptance testing and adhoc deployments",
     ],
     skills: ".Net, SSMS, Redis",
   },
@@ -119,7 +119,7 @@ function TimelineItem({ exp, align }) {
           <p className="italic">{exp.skills}</p>
         </motion.ul>
 
-        {/* Pin indicator (optional) */}
+        {/* Pin indicator */}
         {pinned && (
           <Pin className="text-blue-600 dark:text-yellow-400 mt-3 w-5 h-5"></Pin>
         )}

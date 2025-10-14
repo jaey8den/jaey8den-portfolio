@@ -8,20 +8,20 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    screenshots: ["/website/web1.gif", "/website/web2.gif"],
+    title: "Candlesticks Matcher",
+    screenshots: ["/cdsm/cdsm-1.png"],
     points: [
-      "Built with Next.js and Tailwind CSS",
-      "Fully responsive layout and interactive content",
+      "Captured vector embeddings of candlestick patterns with ResNet18 feature extractor",
+      "Implemented a sliding window to capture patches of embeddings in a chart, determining the pattern with the highest cosine similarity",
+      "Processed charts with OpenCV to meet ResNet expected inputs and determine window sizes and strides",
     ],
     details: [
-      "What better way to prove React experience than having a website built with NextJS to showcase my portfolio?",
-      "This website lists my work experiences and my more notable projects, personal or academic. I have attempted to make this website more modern and interactive, and pleasant to browse. Please feel free to read the backgrounds for my projects! (although they might be a bit long)",
-      "P.S. Resize your window or visit on your phone.",
-      "P.S.S Toggle light and dark mode.",
+      "I've had a strong interest in stock trading and have been trading since Apr 2024. As I think of projects to work on to build my portfolio, I figured why not do something related to stocks? ",
+      "Additionally, many job descriptions for SWE roles required exposure to ML technologies. At the top of my head, this project probably required some ML and computer vision techniques, and so I started working on it.",
+      "It wasn't easy picking up something I have no prior experience with, but that's just part of the package. The annoying part was honestly the deployment. Deploying the API on Render was troublesome as it kept crashing presumably due to memory limits. Eventually I switch to Hugging Face spaces which was better suited for heavier programs and it finally worked. Builds and logs were much faster too.",
     ],
-    skills: ["NextJS, TailwindCSS, Git"],
-    link: ["https://limjiale.com", "Website"],
+    skills: ["ResNet18, OpenCV, FastAPI, Vercel, Hugging Face, Python, NextJS"],
+    link: ["https://candlestick-matcher.vercel.app/", "Candlesticks Matcher"],
   },
   {
     title: "Crochet Diagram Generator",
@@ -36,7 +36,7 @@ const projects = [
       "I started with a python library, turtle, to draw the stitches and developed the logic to determine their angles and positions. Since the diagram is generated in the backend, I had to deploy an API to handle that. However, WordPress only accepts data in JSON or PHP from an API, thus I had to encode and decode the image to display on Wordpress. The real problem arose when I tried to call the API, only to realise that Render is unable to provide a virtual display for turtle to 'draw' on. After further testing and researching, I decided it was prohibitively difficult to continue and looked alternatives.",
       "Then I stumbled upon konva, another drawing library but for Javscript. The biggest difference for me is that it performs client side rendering, which avoid all the problems I had with turtle. As a bonus, it is made to be used with HTML. I can insert a HTML block within the page, upload the functions and call it a day, all done within WordPress itself. After refactoring the logic I had in python to javascript, I had a functioning Crochet Diagram Generator ready to be integrated into WordPress.",
     ],
-    skills: ["FastAPI, Render, S3, turtle, konva, WordPress, Python, NodeJS"],
+    skills: ["Konva, S3, turtle, Render, WordPress, Python, NodeJS"],
     link: [
       "https://thelilipath.com/crochet-diagram-generator/",
       "The LILI Path",
@@ -54,7 +54,7 @@ const projects = [
       "The ActiveSG ballot links are mostly standardised, only a part of it varies with date and location. When timeslots are selected, the epochs are appended at the end of the URL. This is crucial as I want make it as convenient as possible for my lazy friends. With the right epochs appended, they won't need to manually select the timeslots and can simply click ballot.",
       "The template is on my Github along with instructions. With a bot token and chat id, anyone can use it.",
     ],
-    skills: ["Google Cloud, Git, Python"],
+    skills: ["Google Cloud, Python"],
     link: [],
   },
 ];

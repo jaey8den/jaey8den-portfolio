@@ -8,6 +8,13 @@ import Image from "next/image";
 
 const archivedProjects = [
   {
+    title: "Portfolio Website (2025)",
+    screenshots: ["/archives/website/web-1.gif", "/archives/website/web-2.gif"],
+    description:
+      "Responsive portfolio website to showcase notable experiences and works.",
+    skills: "NextJS, TailwindCSS",
+  },
+  {
     title: "Victora Chorale (2023)",
     screenshots: [
       "/archives/victoria-chorale/vc-1.png",

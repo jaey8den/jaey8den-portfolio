@@ -46,17 +46,17 @@ export default function NavigationBar({ pageName }) {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? 0 : "-100%" }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 h-full w-64 bg-gray-900 dark:bg-gray-800 text-white p-6 shadow-lg z-40"
+        className="fixed top-0 left-0 h-full w-64 bg-gray-900 dark:bg-gray-800 text-white pt-6 shadow-lg z-40"
       >
-        <h2 className="text-2xl font-bold mb-6 pt-15">Portfolio</h2>
+        <h2 className="text-2xl font-bold mb-6 pt-15 pl-6">Portfolio</h2>
         <ul className="space-y-4">
           {pages.map((page, index) => (
             <li key={index}>
-              <Link href={page.path} className="hover:text-yellow-300">
+              <Link href={page.path} className="hover:text-yellow-300 pl-6">
                 {page.name}
               </Link>
               {page.name === pageName && (
-                <ul className="pl-6 pt-4 space-y-4">
+                <ul className="pl-12 py-4 mt-4 space-y-4 bg-gray-700 ">
                   {navItems[index].map((sections) => (
                     <li key={sections.id}>
                       <button
