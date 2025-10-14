@@ -27,9 +27,8 @@ const projects = [
     title: "Crochet Diagram Generator",
     screenshots: ["/cdg/cdg-1.png", "/cdg/cdg-2.png"],
     points: [
-      "Developed a program with turtle to generate diagrams from crochet text instructions",
-      "Deployed on Render to process user input and return the corresponding diagram",
-      "Refactored using konva to be compatible with HTML, simplifying integration into WordPress",
+      "Generated crochet diagrams from text instructions using Konva",
+      "Refactored to be fully client sided for instant diagram generation, simplifying integration requirements for WordPress",
     ],
     details: [
       "My friend, who is a crocheter, has to spend a significant amount of time to manually draw the diagrams after developing a crochet design. She tried to find existing services that could perform the conversion from text to diagram accurately, but could not. Thus, she proposed that there will be a demand for such a service, and commissioned me to develop such a program.",
