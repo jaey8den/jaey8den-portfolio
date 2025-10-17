@@ -9,9 +9,9 @@ const experiences = [
     company: "Transcentech Pte. Ltd.",
     date: "Jan 2024 – Oct 2024",
     points: [
+      "Developed web applications in .Net and maintained databases in SSMS, using WCF to retrieve and store information",
       "Identified bottlenecks and optimised stored procedures, shortening rendering times by 10%",
-      "Introduced logging in entire systems for debugging & security",
-      "Wrote test cases and supported user acceptance testing and adhoc deployments",
+      "Conducted code reviews with SonarQube and satisfied WAPT before deploying to production",
     ],
     skills: ".Net, SSMS, Redis",
   },

@@ -11,9 +11,9 @@ const projects = [
     title: "Candlesticks Matcher",
     screenshots: ["/cdsm/cdsm-1.png"],
     points: [
-      "Captured vector embeddings of candlestick patterns with ResNet18 feature extractor",
-      "Implemented a sliding window to capture patches of embeddings in a chart, determining the pattern with the highest cosine similarity",
-      "Processed charts with OpenCV to meet ResNet expected inputs and determine window sizes and strides",
+      "Compared vector embeddings of candlestick patterns and a chart with ResNet18, returning the pattern with the highest cosine similarity",
+      "Implemented a sliding window to capture patches of embeddings in a chart for localised comparisons",
+      "Processed uploaded charts with OpenCV to fetch key details for determining the window’s size and stride",
     ],
     details: [
       "I've had a strong interest in stock trading and have been trading since Apr 2024. As I think of projects to work on to build my portfolio, I figured why not do something related to stocks? ",
@@ -45,7 +45,7 @@ const projects = [
     title: "Badminton Ballot Bot",
     screenshots: ["/bbb/bbb-1.png"],
     points: [
-      "Wrote a function to call a telegram API to send ballot links to a group chat",
+      "Called a telegram API to send ballot links to a group chat",
       "Deployed the function on Google Cloud and created a scheduled job to run it daily",
     ],
     details: [
