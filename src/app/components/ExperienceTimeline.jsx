@@ -9,7 +9,7 @@ const experiences = [
     company: "Transcentech Pte. Ltd.",
     date: "Jan 2024 – Oct 2024",
     points: [
-      "Developed web applications in .Net and maintained databases in SSMS, using WCF to retrieve and store information",
+      "Developed web applications in .Net and hosted them on IIS, maintaining databases with SSMS",
       "Identified bottlenecks and optimised stored procedures, shortening rendering times by 10%",
       "Conducted code reviews with SonarQube and satisfied WAPT before deploying to production",
     ],
@@ -25,16 +25,6 @@ const experiences = [
       "Streamlined software manual, reducing support tickets",
     ],
     skills: "Git, PowerAutomate, Agile",
-  },
-  {
-    role: "Operations Instructor",
-    company: "MegaAdventure",
-    date: "Mar 2019 – Aug 2019",
-    points: [
-      "Facilitated the safety of participants attempting high elements, adapting to emergencies",
-      "Collaborated with team members to ensure smooth operations by proactively offering support",
-    ],
-    skills: "Teamwork, Initiative",
   },
 ];
 

@@ -53,14 +53,17 @@ export default function Home() {
                 </motion.span>
               ))}
             </h1>
+            <p className="text-xl md:text-3xl font-semibold mb-4">
+              {"Full Stack Developer"}
+            </p>
             <p className="text-lg max-w-4xl">
               {
-                "I'm a Full Stack Developer who finds great satisfaction when the code works after one run. Of course, that's unrealistic, so I strive to write clean code that is easy to understand and maintain, in hopes that the next developer (probably me when I revisit the code) who looks at my code doesn't go crazy."
+                "I specialise in building web applications or services to solve real-world problems. My main stacks are Next.js, .Net and Python, along with SQL Server and PostgreSQL for databases."
               }
               <br></br>
               <br></br>
               {
-                "Actively seeking job opportunities where I can utilise my skills and contribute to exciting projects!"
+                "I have a strong interest in AI/ML as it is the logical next step to evolve as a Full Stack Developer. I am keen to take on an entry level role in the field to gain practical experience beyond personal projects."
               }
             </p>
           </div>
