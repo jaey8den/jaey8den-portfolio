@@ -13,7 +13,7 @@ const experiences = [
       "Tracked options data to expose market dealer behaviour, guiding risk management and position sizing",
       "Developed a trading algorithm using measured moves, providing price targets and stop losses",
     ],
-    skills: ".Net, SSMS, Redis",
+    skills: "Financial Analysis, Python, SQlite",
   },
   {
     role: "Full Stack Developer",
