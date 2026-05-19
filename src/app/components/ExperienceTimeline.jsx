@@ -5,6 +5,17 @@ import { Pin } from "lucide-react";
 
 const experiences = [
   {
+    role: "Software Analyst",
+    company: "St Clair Pte. Ltd.",
+    date: "Jan 2026 – May 2026",
+    points: [
+      "Built automated pipelines to conduct fundamental analysis between competitors, lending confidence to trade ideas",
+      "Tracked options data to expose market dealer behaviour, guiding risk management and position sizing",
+      "Developed a trading algorithm using measured moves, providing price targets and stop losses",
+    ],
+    skills: ".Net, SSMS, Redis",
+  },
+  {
     role: "Full Stack Developer",
     company: "Transcentech Pte. Ltd.",
     date: "Jan 2024 – Oct 2024",
