@@ -108,7 +108,7 @@ export default function TerminalInput({
           aria-label="terminal input"
         />
         {/* Visible mirror + blinking cursor */}
-        <span className={`text-term-white whitespace-pre ${!inputValue ? "cursor" : ""}`}>
+        <span className={`text-term-white whitespace-pre-wrap break-all ${!inputValue ? "cursor" : ""}`}>
           {inputValue}
           {inputValue && <span className="cursor" />}
         </span>
