@@ -10,6 +10,7 @@ import TerminalOutput from "./TerminalOutput";
 import TerminalInput from "./TerminalInput";
 import BootSequence from "./BootSequence";
 import QuickBar from "./QuickBar";
+import DesktopView from "./DesktopView";
 
 interface TerminalState {
   currentPath: VirtualPath;
@@ -18,6 +19,7 @@ interface TerminalState {
   historyIndex: number;
   isBooting: boolean;
   theme: ThemeId;
+  viewMode: "terminal" | "desktop";
 }
 
 type Action =
@@ -28,7 +30,8 @@ type Action =
   | { type: "HISTORY_DOWN" }
   | { type: "SET_PATH"; path: VirtualPath }
   | { type: "CLEAR_INPUT" }
-  | { type: "SET_THEME"; theme: ThemeId };
+  | { type: "SET_THEME"; theme: ThemeId }
+  | { type: "SET_VIEW_MODE"; mode: "terminal" | "desktop" };
 
 function reducer(state: TerminalState, action: Action): TerminalState {
   switch (action.type) {
@@ -81,6 +84,9 @@ function reducer(state: TerminalState, action: Action): TerminalState {
     case "SET_THEME":
       return { ...state, theme: action.theme, isBooting: true };
 
+    case "SET_VIEW_MODE":
+      return { ...state, viewMode: action.mode };
+
     default:
       return state;
   }
@@ -98,6 +104,7 @@ export default function TerminalApp({ initialPath = "~" }: Props) {
     historyIndex: -1,
     isBooting: true,
     theme: DEFAULT_THEME,
+    viewMode: "terminal",
   });
 
   const { visibleLines, isAnimating, skip, appendLines, setLines } =
@@ -159,6 +166,16 @@ export default function TerminalApp({ initialPath = "~" }: Props) {
     dispatch({ type: "SET_THEME", theme });
   }, [setLines]);
 
+  const handleEnterDesktop = useCallback(() => {
+    dispatch({ type: "SET_VIEW_MODE", mode: "desktop" });
+  }, []);
+
+  const handleExitDesktop = useCallback((theme: ThemeId) => {
+    setLines([]);
+    dispatch({ type: "SET_THEME", theme });
+    dispatch({ type: "SET_VIEW_MODE", mode: "terminal" });
+  }, [setLines]);
+
   const focusInput = useCallback(() => {
     if (!state.isBooting) {
       (
@@ -192,10 +209,15 @@ export default function TerminalApp({ initialPath = "~" }: Props) {
 
   const themeConfig = THEMES[state.theme];
 
+  if (state.viewMode === "desktop") {
+    return <DesktopView onExitDesktop={handleExitDesktop} />;
+  }
+
   return (
     <TerminalWindow
       theme={state.theme}
       onThemeChange={handleThemeChange}
+      onDesktopMode={handleEnterDesktop}
       onFocusInput={focusInput}
     >
       {state.isBooting ? (

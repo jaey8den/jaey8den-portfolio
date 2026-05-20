@@ -7,12 +7,13 @@ interface Props {
   children: ReactNode;
   theme: ThemeId;
   onThemeChange: (t: ThemeId) => void;
+  onDesktopMode: () => void;
   onFocusInput?: () => void;
 }
 
 const THEME_ORDER: ThemeId[] = ["bash", "powershell", "cmd"];
 
-export default function TerminalWindow({ children, theme, onThemeChange, onFocusInput }: Props) {
+export default function TerminalWindow({ children, theme, onThemeChange, onDesktopMode, onFocusInput }: Props) {
   const config = THEMES[theme];
 
   const titleBar = (
@@ -40,7 +41,7 @@ export default function TerminalWindow({ children, theme, onThemeChange, onFocus
 
       {/* Right side: theme switcher + window controls */}
       <div className="flex items-center gap-3">
-        {/* Theme switcher */}
+        {/* Theme switcher + desktop mode button */}
         <div
           className="flex items-center gap-1"
           onClick={(e) => e.stopPropagation()}
@@ -58,6 +59,12 @@ export default function TerminalWindow({ children, theme, onThemeChange, onFocus
               {THEMES[tid].name}
             </button>
           ))}
+          <button
+            onClick={onDesktopMode}
+            className="text-[10px] font-mono px-2 py-0.5 border border-term-border text-term-dim hover:text-term-white hover:border-term-green transition-colors"
+          >
+            gui
+          </button>
         </div>
 
         {/* Decorative window controls (windows style only) */}
