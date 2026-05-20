@@ -14,9 +14,9 @@ export const projects: Project[] = [
     title: "Candlesticks Matcher",
     screenshots: ["/cdsm/cdsm-1.png"],
     points: [
-      "Compared vector embeddings of candlestick patterns and a chart with ResNet18, returning the pattern with the highest cosine similarity",
-      "Implemented a sliding window to capture patches of embeddings in a chart for localised comparisons",
-      "Processed uploaded charts with OpenCV to fetch key details for determining the window's size and stride",
+      "Attempted to identify candlestick patterns using vector embeddings and cosine similarity",
+      "Implemented a sliding window to capture patches of an uploaded image for localised comparisons",
+      "Processed uploaded charts with OpenCV to determine the window’s size and stride",
     ],
     details: [
       "I've had a strong interest in stock trading and have been trading since Apr 2024. As I think of projects to work on to build my portfolio, I figured why not do something related to stocks?",
@@ -40,7 +40,10 @@ export const projects: Project[] = [
       "Then I stumbled upon konva, another drawing library but for Javscript. The biggest difference for me is that it performs client side rendering, which avoid all the problems I had with turtle. As a bonus, it is made to be used with HTML. I can insert a HTML block within the page, upload the functions and call it a day, all done within WordPress itself. After refactoring the logic I had in python to javascript, I had a functioning Crochet Diagram Generator ready to be integrated into WordPress.",
     ],
     skills: ["Konva, S3, turtle, Render, WordPress, Python, NodeJS"],
-    link: ["https://thelilipath.com/crochet-diagram-generator/", "The LILI Path"],
+    link: [
+      "https://thelilipath.com/crochet-diagram-generator/",
+      "The LILI Path",
+    ],
   },
   {
     slug: "bbb",

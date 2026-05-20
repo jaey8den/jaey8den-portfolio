@@ -24,11 +24,15 @@ export default function BootSequence({ bootLines, scanlines, onComplete }: Props
         onComplete();
         return;
       }
-      const { text, color } = bootLines[indexRef.current];
+      const { text, color, small } = bootLines[indexRef.current];
       const el = document.createElement("div");
       el.textContent = text || " ";
       el.style.color = color || "transparent";
       el.style.whiteSpace = "pre";
+      if (small) {
+        el.style.fontSize = "clamp(7px, 2vw, 14px)";
+        el.style.lineHeight = "1";
+      }
       containerRef.current.appendChild(el);
       indexRef.current++;
       timerRef.current = setTimeout(printNext, 55);

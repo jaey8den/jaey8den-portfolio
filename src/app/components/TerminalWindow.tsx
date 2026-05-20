@@ -25,14 +25,14 @@ export default function TerminalWindow({ children, theme, onThemeChange, onDeskt
             <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
             <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
             <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-            <span className="ml-2 text-term-dim font-mono text-xs select-none">
+            <span className="ml-2 text-term-dim font-mono text-xs select-none hidden sm:inline">
               {config.titleLabel}
             </span>
           </>
         ) : (
           <>
             <span className="text-term-cyan text-xs select-none">❯_</span>
-            <span className="text-term-white font-mono text-xs select-none">
+            <span className="text-term-white font-mono text-xs select-none hidden sm:inline">
               {config.titleLabel}
             </span>
           </>

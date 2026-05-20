@@ -14,25 +14,25 @@ interface Props {
 type WindowId = "about" | "experience" | "projects" | "archives" | "contact";
 
 const ICONS: { id: WindowId; label: string; emoji: string }[] = [
-  { id: "about",      label: "About",      emoji: "👤" },
+  { id: "about", label: "About", emoji: "👤" },
   { id: "experience", label: "Experience", emoji: "💼" },
-  { id: "projects",   label: "Projects",   emoji: "📁" },
-  { id: "archives",   label: "Archives",   emoji: "📦" },
-  { id: "contact",    label: "Contact",    emoji: "✉️" },
+  { id: "projects", label: "Projects", emoji: "📁" },
+  { id: "archives", label: "Archives", emoji: "📦" },
+  { id: "contact", label: "Contact", emoji: "✉️" },
 ];
 
 const WINDOW_TITLES: Record<WindowId, string> = {
-  about:      "About",
+  about: "About",
   experience: "Work Experience",
-  projects:   "Projects",
-  archives:   "Archive",
-  contact:    "Contact",
+  projects: "Projects",
+  archives: "Archive",
+  contact: "Contact",
 };
 
 const THEME_BUTTONS: { id: ThemeId; label: string }[] = [
-  { id: "bash",       label: "bash" },
-  { id: "powershell", label: "ps"   },
-  { id: "cmd",        label: "cmd"  },
+  { id: "bash", label: "bash" },
+  { id: "powershell", label: "ps" },
+  { id: "cmd", label: "cmd" },
 ];
 
 function SkillTags({ skills }: { skills: string | string[] }) {
@@ -42,7 +42,10 @@ function SkillTags({ skills }: { skills: string | string[] }) {
   return (
     <div className="flex flex-wrap gap-1.5 mt-3">
       {tags.map((tag) => (
-        <span key={tag} className="text-xs px-2 py-0.5 rounded bg-[#152535] text-[#7ec8e3]">
+        <span
+          key={tag}
+          className="text-xs px-2 py-0.5 rounded bg-[#152535] text-[#7ec8e3]"
+        >
           {tag}
         </span>
       ))}
@@ -55,12 +58,22 @@ function AboutContent() {
     <div className="space-y-4 text-[#d0d8e8]">
       <div>
         <h2 className="text-xl font-bold text-[#00e5ff]">Lim Jia Le</h2>
-        <p className="text-[#667788]">Full Stack Developer</p>
+        <p className="text-[#667788]">Software Developer</p>
       </div>
-      <p>I specialise in building web applications or services to solve real-world problems.</p>
-      <p>My main stacks are Next.js, .Net and Python, along with SQL Server and PostgreSQL for databases.</p>
-      <p>I have a strong interest in AI/ML as it is the logical next step to evolve as a Full Stack Developer.</p>
-      <p>I am keen to take on an entry level role in the field to gain practical experience beyond personal projects.</p>
+      <p>
+        I specialise in building software to solve problems, but I especially
+        enjoy automating tedious tasks and making quality of life enhancements.
+        After all, software exist to make processes more efficient, and our
+        lives easier.
+      </p>
+      <p>
+        My main stack is Python, but I am familiar with .Net, SQL and NextJS as
+        well.
+      </p>
+      <p>
+        Looking for software development opportunities, but open to other
+        related roles.
+      </p>
     </div>
   );
 }
@@ -69,17 +82,21 @@ function ExperienceContent() {
   return (
     <div className="space-y-4">
       {experiences.map((exp) => (
-        <div key={exp.slug} className="bg-[#1a2535] border border-[#243448] rounded-lg p-4">
-          <div className="flex items-start justify-between gap-2">
-            <div>
-              <div className="font-semibold text-[#d0d8e8]">{exp.role}</div>
-              <div className="text-sm text-[#667788]">{exp.company}</div>
-            </div>
-            <div className="text-xs text-[#667788] whitespace-nowrap shrink-0">{exp.date}</div>
+        <div
+          key={exp.slug}
+          className="bg-[#1a2535] border border-[#243448] rounded-lg p-4"
+        >
+          <div>
+            <div className="font-semibold text-[#d0d8e8]">{exp.role}</div>
+            <div className="text-sm text-[#667788]">{exp.company}</div>
+            <div className="text-xs text-[#667788] mt-0.5">{exp.date}</div>
           </div>
           <ul className="mt-3 space-y-1.5">
             {exp.points.map((point, i) => (
-              <li key={i} className="text-sm text-[#d0d8e8] flex gap-2">
+              <li
+                key={i}
+                className="text-[10px] sm:text-sm text-[#d0d8e8] flex gap-2"
+              >
                 <span className="text-[#667788] shrink-0">•</span>
                 <span>{point}</span>
               </li>
@@ -100,7 +117,10 @@ function Slideshow({ screenshots }: { screenshots: string[] }) {
 
   return (
     <div className="mt-3">
-      <div className="relative rounded overflow-hidden" style={{ height: "160px" }}>
+      <div
+        className="relative rounded overflow-hidden"
+        style={{ height: "160px" }}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={screenshots[index]}
@@ -111,13 +131,19 @@ function Slideshow({ screenshots }: { screenshots: string[] }) {
         {multi && (
           <>
             <button
-              onClick={(e) => { e.stopPropagation(); setIndex((index - 1 + screenshots.length) % screenshots.length); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIndex((index - 1 + screenshots.length) % screenshots.length);
+              }}
               className="absolute left-1.5 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white text-lg leading-none px-1.5 py-0.5 rounded transition-colors"
             >
               ‹
             </button>
             <button
-              onClick={(e) => { e.stopPropagation(); setIndex((index + 1) % screenshots.length); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIndex((index + 1) % screenshots.length);
+              }}
               className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white text-lg leading-none px-1.5 py-0.5 rounded transition-colors"
             >
               ›
@@ -167,14 +193,14 @@ function ProjectCard({ proj }: { proj: Project }) {
 
   return (
     <div className="bg-[#1a2535] border border-[#243448] rounded-lg p-4">
-      <div className="flex items-start justify-between gap-2">
+      <div>
         <div className="font-semibold text-[#d0d8e8]">{proj.title}</div>
         {proj.link && (
           <a
             href={proj.link[0]}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[#00e5ff] hover:underline whitespace-nowrap shrink-0"
+            className="text-xs text-[#00e5ff] hover:underline"
           >
             {proj.link[1]} ↗
           </a>
@@ -182,7 +208,10 @@ function ProjectCard({ proj }: { proj: Project }) {
       </div>
       <ul className="mt-3 space-y-1.5">
         {proj.points.map((point, i) => (
-          <li key={i} className="text-sm text-[#d0d8e8] flex gap-2">
+          <li
+            key={i}
+            className="text-[10px] sm:text-sm text-[#d0d8e8] flex gap-2"
+          >
             <span className="text-[#667788] shrink-0">•</span>
             <span>{point}</span>
           </li>
@@ -199,7 +228,12 @@ function ProjectCard({ proj }: { proj: Project }) {
           {showBackground && (
             <div className="mt-2 space-y-2">
               {proj.details.map((d, i) => (
-                <p key={i} className="text-sm text-[#d0d8e8] leading-relaxed">{d}</p>
+                <p
+                  key={i}
+                  className="text-[10px] sm:text-sm text-[#d0d8e8] leading-relaxed"
+                >
+                  {d}
+                </p>
               ))}
             </div>
           )}
@@ -225,9 +259,14 @@ function ArchivesContent() {
   return (
     <div className="space-y-4">
       {archives.map((arch) => (
-        <div key={arch.slug} className="bg-[#1a2535] border border-[#243448] rounded-lg p-4">
+        <div
+          key={arch.slug}
+          className="bg-[#1a2535] border border-[#243448] rounded-lg p-4"
+        >
           <div className="font-semibold text-[#d0d8e8]">{arch.title}</div>
-          <p className="mt-2 text-sm text-[#d0d8e8] leading-relaxed">{arch.description}</p>
+          <p className="mt-2 text-sm text-[#d0d8e8] leading-relaxed">
+            {arch.description}
+          </p>
           <Slideshow screenshots={arch.screenshots} />
           <SkillTags skills={arch.skills} />
         </div>
@@ -247,7 +286,10 @@ function ContactContent() {
         </div>
         <div className="flex gap-4">
           <span className="text-[#667788] w-20 shrink-0">Email</span>
-          <a href="mailto:lim.jia.le51@gmail.com" className="text-[#00e5ff] hover:underline">
+          <a
+            href="mailto:lim.jia.le51@gmail.com"
+            className="text-[#00e5ff] hover:underline"
+          >
             lim.jia.le51@gmail.com
           </a>
         </div>
@@ -275,7 +317,11 @@ function ContactContent() {
         </div>
         <div className="flex gap-4">
           <span className="text-[#667788] w-20 shrink-0">Resume</span>
-          <a href="/LimJiaLe-Resume.pdf" download className="text-[#00e5ff] hover:underline">
+          <a
+            href="/LimJiaLe-Resume.pdf"
+            download
+            className="text-[#00e5ff] hover:underline"
+          >
             LimJiaLe-Resume.pdf [download]
           </a>
         </div>
@@ -327,7 +373,9 @@ export default function DesktopView({ onExitDesktop }: Props) {
                 className="flex flex-col items-center gap-1 p-3 w-20 rounded border border-transparent hover:border-[#00e5ff]/40 hover:bg-[#00e5ff]/5 transition-colors"
               >
                 <span className="text-3xl select-none">{icon.emoji}</span>
-                <span className="text-xs text-[#d0d8e8] text-center leading-tight">{icon.label}</span>
+                <span className="text-xs text-[#d0d8e8] text-center leading-tight">
+                  {icon.label}
+                </span>
               </button>
             ))}
           </div>
@@ -347,11 +395,11 @@ export default function DesktopView({ onExitDesktop }: Props) {
                   title={WINDOW_TITLES[openWindow]}
                   onClose={() => setOpenWindow(null)}
                 >
-                  {openWindow === "about"      && <AboutContent />}
+                  {openWindow === "about" && <AboutContent />}
                   {openWindow === "experience" && <ExperienceContent />}
-                  {openWindow === "projects"   && <ProjectsContent />}
-                  {openWindow === "archives"   && <ArchivesContent />}
-                  {openWindow === "contact"    && <ContactContent />}
+                  {openWindow === "projects" && <ProjectsContent />}
+                  {openWindow === "archives" && <ArchivesContent />}
+                  {openWindow === "contact" && <ContactContent />}
                 </DesktopWindow>
               </div>
             </div>

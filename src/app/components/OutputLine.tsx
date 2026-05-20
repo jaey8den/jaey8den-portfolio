@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { OutputLine as OutputLineType, OutputSegment } from "../lib/commands";
 
 const colorClass: Record<NonNullable<OutputSegment["color"]>, string> = {
@@ -19,7 +20,9 @@ function Segment({ seg }: { seg: OutputSegment }) {
     .filter(Boolean)
     .join(" ");
 
-  const style = seg.rawColor ? { color: seg.rawColor } : undefined;
+  const style: React.CSSProperties = {};
+  if (seg.rawColor) style.color = seg.rawColor;
+  if (seg.small) style.fontSize = "clamp(7px, 2vw, 14px)";
 
   if (seg.href) {
     return (
@@ -40,8 +43,9 @@ function Segment({ seg }: { seg: OutputSegment }) {
 }
 
 export default function OutputLine({ line }: { line: OutputLineType }) {
+  const isBanner = line.segments.some((s) => s.small);
   return (
-    <div className="leading-relaxed whitespace-pre-wrap break-words">
+    <div className={isBanner ? "leading-none whitespace-pre" : "leading-relaxed whitespace-pre-wrap break-words"}>
       {line.segments.map((seg, i) => (
         <Segment key={i} seg={seg} />
       ))}

@@ -6,6 +6,7 @@ export type { ThemeId };
 export interface BootLine {
   text: string;
   color: string;
+  small?: boolean;
 }
 
 export interface ThemeConfig {
@@ -27,7 +28,7 @@ const ASCII_BANNER_LINES = [
 ];
 
 function bannerLines(color: string): BootLine[] {
-  return ASCII_BANNER_LINES.map((text) => ({ text, color }));
+  return ASCII_BANNER_LINES.map((text) => ({ text, color, small: true }));
 }
 
 export const THEMES: Record<ThemeId, ThemeConfig> = {
@@ -39,7 +40,10 @@ export const THEMES: Record<ThemeId, ThemeConfig> = {
     scanlines: true,
     bootLines: [
       { text: "limjiale.com [kernel] v1.0.0", color: "#00b32c" },
-      { text: "Copyright (c) 2025 Lim Jia Le. All rights reserved.", color: "#555555" },
+      {
+        text: "Copyright (c) 2026 Lim Jia Le. All rights reserved.",
+        color: "#555555",
+      },
       { text: "", color: "" },
       { text: "Mounting filesystem...  [ OK ]", color: "#00b32c" },
       { text: "Loading portfolio data... [ OK ]", color: "#00b32c" },
@@ -60,9 +64,15 @@ export const THEMES: Record<ThemeId, ThemeConfig> = {
     scanlines: false,
     bootLines: [
       { text: "Windows PowerShell", color: "#eeedf0" },
-      { text: "Copyright (C) Microsoft Corporation. All rights reserved.", color: "#8899aa" },
+      {
+        text: "Copyright (C) Microsoft Corporation. All rights reserved.",
+        color: "#8899aa",
+      },
       { text: "", color: "" },
-      { text: "Try the new cross-platform PowerShell https://aka.ms/pscore6", color: "#8899aa" },
+      {
+        text: "Try the new cross-platform PowerShell https://aka.ms/pscore6",
+        color: "#8899aa",
+      },
       { text: "", color: "" },
       { text: "Loading module: JiaLePortfolio v1.0.0...", color: "#8899aa" },
       { text: "Import-Module : Initialised successfully.", color: "#00e5ff" },
@@ -82,7 +92,10 @@ export const THEMES: Record<ThemeId, ThemeConfig> = {
     scanlines: false,
     bootLines: [
       { text: "Microsoft Windows [Version 10.0.19045.5854]", color: "#c0c0c0" },
-      { text: "(c) Microsoft Corporation. All rights reserved.", color: "#666666" },
+      {
+        text: "(c) Microsoft Corporation. All rights reserved.",
+        color: "#666666",
+      },
       { text: "", color: "" },
       ...bannerLines("#c0c0c0"),
       { text: "", color: "" },
@@ -97,7 +110,7 @@ export const DEFAULT_THEME: ThemeId = "powershell";
 // Prompt segments for each theme — used in TerminalInput and echo lines
 export function getPromptSegments(
   themeId: ThemeId,
-  path: VirtualPath
+  path: VirtualPath,
 ): OutputSegment[] {
   switch (themeId) {
     case "bash":

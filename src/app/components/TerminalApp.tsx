@@ -191,7 +191,7 @@ export default function TerminalApp({ initialPath = "~" }: Props) {
     const bootOutputLines = THEMES[state.theme].bootLines.map((bl) => ({
       id: crypto.randomUUID(),
       type: "system" as const,
-      segments: [{ text: bl.text || " ", rawColor: bl.color || "transparent" }],
+      segments: [{ text: bl.text || " ", rawColor: bl.color || "transparent", small: bl.small }],
     }));
     setLines(bootOutputLines);
     dispatch({ type: "BOOT_COMPLETE" });

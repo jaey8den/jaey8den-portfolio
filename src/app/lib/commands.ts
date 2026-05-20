@@ -9,6 +9,7 @@ export interface OutputSegment {
   rawColor?: string;
   href?: string;
   bold?: boolean;
+  small?: boolean;
 }
 
 export interface OutputLine {
@@ -269,7 +270,11 @@ function cmdContact(): CommandResult {
 
 function cmdBanner(): CommandResult {
   return {
-    lines: [blank(), ...BANNER.split("\n").map((l) => line([text(l, "green")])), blank()],
+    lines: [
+      blank(),
+      ...BANNER.split("\n").map((l) => line([{ text: l, color: "green" as const, small: true }])),
+      blank(),
+    ],
   };
 }
 
