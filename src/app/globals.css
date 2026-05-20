@@ -1,1 +1,99 @@
 @import "tailwindcss";
+
+/* Default theme: PowerShell */
+@theme {
+  --color-term-bg:        #012456;
+  --color-term-surface:   #0c2d6b;
+  --color-term-border:    #1e4d9e;
+  --color-term-green:     #b9d3ee;
+  --color-term-green-dim: #7a9fc0;
+  --color-term-cyan:      #00e5ff;
+  --color-term-yellow:    #ffff00;
+  --color-term-red:       #ff6060;
+  --color-term-white:     #eeedf0;
+  --color-term-dim:       #8899aa;
+  --color-term-cursor:    #ffffff;
+}
+
+/* Bash (Linux) theme overrides */
+[data-theme="bash"] {
+  --color-term-bg:        #0a0a0a;
+  --color-term-surface:   #111111;
+  --color-term-border:    #1e1e1e;
+  --color-term-green:     #00ff41;
+  --color-term-green-dim: #00b32c;
+  --color-term-cyan:      #00e5ff;
+  --color-term-yellow:    #ffd700;
+  --color-term-red:       #ff4444;
+  --color-term-white:     #e8e8e8;
+  --color-term-dim:       #555555;
+  --color-term-cursor:    #00ff41;
+}
+
+/* Command Prompt theme overrides */
+[data-theme="cmd"] {
+  --color-term-bg:        #0c0c0c;
+  --color-term-surface:   #1a1a1a;
+  --color-term-border:    #333333;
+  --color-term-green:     #c0c0c0;
+  --color-term-green-dim: #888888;
+  --color-term-cyan:      #c0c0c0;
+  --color-term-yellow:    #c0c0c0;
+  --color-term-red:       #cc3333;
+  --color-term-white:     #c0c0c0;
+  --color-term-dim:       #666666;
+  --color-term-cursor:    #c0c0c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1f2e;
+  color: #eeedf0;
+}
+
+/* Scanlines CRT overlay — applied conditionally for bash theme */
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Blinking cursor — uses CSS variable so it follows the active theme */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor::after {
+  content: "▋";
+  color: var(--color-term-cursor);
+  animation: blink 1.06s step-start infinite;
+  margin-left: 1px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-term-bg, #012456);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-term-border, #1e4d9e);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-term-cyan, #00e5ff);
+}
