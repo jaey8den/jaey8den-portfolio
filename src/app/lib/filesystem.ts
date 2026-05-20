@@ -43,6 +43,33 @@ export function resolvePath(current: VirtualPath, input: string): VirtualPath | 
   return null;
 }
 
+const CD_COMMANDS  = new Set(["cd", "set-location", "sl"]);
+const CAT_COMMANDS = new Set(["cat", "type", "get-content"]);
+const LS_COMMANDS  = new Set(["ls", "dir", "get-childitem"]);
+
+export function getContextCompletions(input: string, currentPath: VirtualPath): string[] {
+  const spaceIdx = input.indexOf(" ");
+
+  if (spaceIdx === -1) {
+    return [];
+  }
+
+  const command = input.slice(0, spaceIdx).toLowerCase();
+  const argPrefix = input.slice(spaceIdx + 1);
+  const entries = listDir(currentPath);
+
+  let candidates: string[];
+  if (CD_COMMANDS.has(command)) {
+    candidates = entries.filter((e) => e.endsWith("/"));
+  } else if (CAT_COMMANDS.has(command) || LS_COMMANDS.has(command)) {
+    candidates = entries;
+  } else {
+    return [];
+  }
+
+  return candidates.filter((e) => e.startsWith(argPrefix)).sort();
+}
+
 // All completable tokens for tab completion
 export const ALL_COMMANDS = [
   "help",

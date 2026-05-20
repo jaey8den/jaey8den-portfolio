@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { VirtualPath, ALL_COMMANDS, ALL_PATHS } from "../lib/filesystem";
+import { VirtualPath, getContextCompletions } from "../lib/filesystem";
 import { ThemeId, getPromptSegments } from "../lib/themes";
 import { OutputSegment } from "../lib/commands";
 
@@ -50,7 +50,14 @@ export default function TerminalInput({
   onHistoryDown,
   onClear,
 }: Props) {
+  interface CycleState {
+    list: string[];
+    index: number;
+    commandPrefix: string;
+  }
+
   const inputRef = useRef<HTMLInputElement>(null);
+  const cycleRef = useRef<CycleState | null>(null);
 
   useEffect(() => {
     if (!disabled) {
@@ -61,25 +68,38 @@ export default function TerminalInput({
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === "Enter") {
       e.preventDefault();
+      cycleRef.current = null;
       onSubmit(inputValue);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
+      cycleRef.current = null;
       onHistoryUp();
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
+      cycleRef.current = null;
       onHistoryDown();
     } else if (e.key === "Tab") {
       e.preventDefault();
-      const completions = [...ALL_COMMANDS, ...ALL_PATHS].filter((c) =>
-        c.startsWith(inputValue)
-      );
-      if (completions.length === 1) {
-        onChange(completions[0]);
-      } else if (completions.length > 1) {
-        onSubmit(`echo ${completions.join("  ")}`);
+      if (cycleRef.current === null) {
+        const spaceIdx = inputValue.indexOf(" ");
+        const commandPrefix = spaceIdx === -1 ? "" : inputValue.slice(0, spaceIdx + 1);
+        const list = getContextCompletions(inputValue, currentPath);
+        if (list.length === 0) return;
+        if (list.length === 1) {
+          onChange(commandPrefix + list[0]);
+          return;
+        }
+        cycleRef.current = { list, index: 0, commandPrefix };
+        onChange(commandPrefix + list[0]);
+      } else {
+        const { list, commandPrefix } = cycleRef.current;
+        const nextIndex = (cycleRef.current.index + 1) % list.length;
+        cycleRef.current.index = nextIndex;
+        onChange(commandPrefix + list[nextIndex]);
       }
     } else if (e.key === "c" && e.ctrlKey) {
       e.preventDefault();
+      cycleRef.current = null;
       onSubmit("^C");
     } else if (e.key === "l" && e.ctrlKey) {
       e.preventDefault();
@@ -98,7 +118,7 @@ export default function TerminalInput({
           ref={inputRef}
           type="text"
           value={inputValue}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => { cycleRef.current = null; onChange(e.target.value); }}
           onKeyDown={handleKeyDown}
           className="absolute inset-0 opacity-0 w-full bg-transparent border-none outline-none cursor-default"
           autoComplete="off"
