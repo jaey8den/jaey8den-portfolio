@@ -10,6 +10,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "jhe",
+    title: "JSON Editor",
+    screenshots: ["/jhe/jhe-1.png"],
+    points: [
+      "Created a drag and drop JSON restructuring tool",
+      "Restructures the schema, modifying all leaves simultaneously",
+    ],
+    details: [
+      "Had a project where I was refactoring my JSON file to better fit my workflow. Having over 500 leaves made manual refactoring a real pain.",
+      "I asked Claude to do it the last time, now I can do it with this tool. The leaves need to a standardised schema for this to work optimally.",
+    ],
+    skills: [],
+    link: ["https://json-hierarchy-editor.vercel.app/", "JSON Editor"],
+  },  
+  {
     slug: "cdsm",
     title: "Candlesticks Matcher",
     screenshots: ["/cdsm/cdsm-1.png"],
