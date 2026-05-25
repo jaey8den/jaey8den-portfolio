@@ -10,6 +10,41 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "cfc",
+    title: "Concession Fare Checker",
+    screenshots: ["/cfc/cfc-1.png", "/cfc/cfc-2.png"],
+    points: [
+      "Developed a fare checker for what would have been incurred without a concession pass",
+    ],
+    details: [
+      "There was a month where I had spend nearly $200 on public transport, which is honestly ridiculous. Concession pass was only $122, so it was a no brainer to buy it.",
+      "After a few months, I began to wonder if I was actually saving money with the pass. I checked the SimplyGo app and they do not show fares for pass usage, just the journey details. However, they do provide a monthly PDF statement.",
+      "I immediately thought of parsing the PDF to extract the journey details such as the time stamps and locations. Combined with the fare structures and data from LTA, I can calculate/estimate the fares for each journey!",
+      "It is hosted on Vercel for public use, since I don't think I'm only the only curious one. Be careful though, that's why they say curiousity killed the cat...",
+    ],
+    skills: [],
+    link: [
+      "https://concession-fare-checker.vercel.app/",
+      "Concession Fare Checker",
+    ],
+  },
+  {
+    slug: "st",
+    title: "soaptest",
+    screenshots: [],
+    points: [
+      "Developed a python package to test SOAP APIs with ease",
+      "Exposes all WDSL operations as functions and their required parameters, skipping boilerplates or manual configuration of XML envelopes",
+    ],
+    details: [
+      "I saw a Reddit Post complaining about manual configuration for SOAP testing. It painfully reminded me of my previous job where I had the same experience.",
+      "There were already dev tools like SoapUI and Postman, but I wanted something that could be used directly on the IDE or CLI. There's zeep too, but I felt like there were many small inconveniences that could be avoided.",
+      "soaptest is basically a ergonomic improvement for zeep. You can read the PyPI documentation for more details, it is still currentlu under development with more features to be added.",
+    ],
+    skills: [],
+    link: ["https://pypi.org/project/soaptest/", "soaptest"],
+  },
+  {
     slug: "jhe",
     title: "JSON Editor",
     screenshots: ["/jhe/jhe-1.png"],
@@ -23,7 +58,7 @@ export const projects: Project[] = [
     ],
     skills: [],
     link: ["https://json-hierarchy-editor.vercel.app/", "JSON Editor"],
-  },  
+  },
   {
     slug: "cdsm",
     title: "Candlesticks Matcher",
