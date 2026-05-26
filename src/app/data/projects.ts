@@ -14,7 +14,9 @@ export const projects: Project[] = [
     title: "Concession Fare Checker",
     screenshots: ["/cfc/cfc-1.png", "/cfc/cfc-2.png"],
     points: [
-      "Developed a fare checker for what would have been incurred without a concession pass",
+      "Developed a fare checker to calculate the travel fares for journeys paid with concession",
+      "Parsed SimplyGo’s monthly PDF statement for journey details, matching bus stop descriptions with codes fetched from LTA DataMall",
+      "Estimated travel distances between bus stops using coordinates, and sgraildata for track distances between train stations",
     ],
     details: [
       "There was a month where I had spend nearly $200 on public transport, which is honestly ridiculous. Concession pass was only $122, so it was a no brainer to buy it.",
@@ -31,10 +33,10 @@ export const projects: Project[] = [
   {
     slug: "st",
     title: "soaptest",
-    screenshots: [],
+    screenshots: ["/st/st-1.png"],
     points: [
-      "Developed a python package to test SOAP APIs with ease",
-      "Exposes all WDSL operations as functions and their required parameters, skipping boilerplates or manual configuration of XML envelopes",
+      "Released a python package for testing SOAP APIs, skipping raw XML and boilerplates",
+      "Exposed all WDSL operations as functions with the required parameters, simplifying tests with pytest",
     ],
     details: [
       "I saw a Reddit Post complaining about manual configuration for SOAP testing. It painfully reminded me of my previous job where I had the same experience.",
@@ -49,8 +51,8 @@ export const projects: Project[] = [
     title: "JSON Editor",
     screenshots: ["/jhe/jhe-1.png"],
     points: [
-      "Created a drag and drop JSON restructuring tool",
-      "Restructures the schema, modifying all leaves simultaneously",
+      "Created a drag and drop JSON restructure tool",
+      "Restructures all leaves simultaneously, allowing quick swaps among depths and key-value pairs",
     ],
     details: [
       "Had a project where I was refactoring my JSON file to better fit my workflow. Having over 500 leaves made manual refactoring a real pain.",
