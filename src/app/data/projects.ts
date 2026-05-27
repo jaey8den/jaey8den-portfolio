@@ -37,6 +37,7 @@ export const projects: Project[] = [
     points: [
       "Released a python package for testing SOAP APIs, skipping raw XML and boilerplates",
       "Exposed all WDSL operations as functions with the required parameters, simplifying tests with pytest",
+      "Automated CI tests and version tag matching with github actions, avoiding broken releases",
     ],
     details: [
       "I saw a Reddit Post complaining about manual configuration for SOAP testing. It painfully reminded me of my previous job where I had the same experience.",
@@ -84,7 +85,7 @@ export const projects: Project[] = [
     screenshots: ["/cdg/cdg-1.png", "/cdg/cdg-2.png"],
     points: [
       "Generated crochet diagrams from text instructions using Konva",
-      "Refactored to be fully client sided for instant diagram generation, simplifying integration requirements for WordPress",
+      "Designed to be fully client sides for data privacy and storage concerns, simplifying integration requirements for Wordpress",
     ],
     details: [
       "My friend, who is a crocheter, has to spend a significant amount of time to manually draw the diagrams after developing a crochet design. She tried to find existing services that could perform the conversion from text to diagram accurately, but could not. Thus, she proposed that there will be a demand for such a service, and commissioned me to develop such a program.",
@@ -96,20 +97,5 @@ export const projects: Project[] = [
       "https://thelilipath.com/crochet-diagram-generator/",
       "The LILI Path",
     ],
-  },
-  {
-    slug: "bbb",
-    title: "Badminton Ballot Bot",
-    screenshots: ["/bbb/bbb-1.png"],
-    points: [
-      "Called a telegram API to send ballot links to a group chat",
-      "Deployed the function on Google Cloud and created a scheduled job to run it daily",
-    ],
-    details: [
-      "I have a friend group who I play badminton with and naturally we have a telegram group to send ballot links and arrange players. However, everyone is lazy beyond belief (including me) and only two of my friends are actively sending the links each day, sometimes none when they are too busy. One day, they just asked, 'Can yall (there are a few SWEs) build a bot to send the links?'",
-      "The ActiveSG ballot links are mostly standardised, only a part of it varies with date and location. When timeslots are selected, the epochs are appended at the end of the URL. This is crucial as I want make it as convenient as possible for my lazy friends. With the right epochs appended, they won't need to manually select the timeslots and can simply click ballot.",
-      "The template is on my Github along with instructions. With a bot token and chat id, anyone can use it.",
-    ],
-    skills: ["Google Cloud, Python"],
   },
 ];

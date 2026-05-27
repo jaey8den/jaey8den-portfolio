@@ -4,16 +4,37 @@ export interface Archive {
   screenshots: string[];
   description: string;
   skills: string;
+  link?: [string, string];
+  points?: string[];
+  details?: string[];
 }
 
 export const archives: Archive[] = [
   {
     slug: "website",
-    title: "Portfolio Website (2025)",
-    screenshots: ["/archives/website/web-1.gif", "/archives/website/web-2.gif"],
+    title: "Portfolio Website (2026)",
+    screenshots: ["/archives/website/web-1.png", "/archives/website/web-2.png"],
     description:
-      "Responsive portfolio website to showcase notable experiences and works.",
+      "CLI themed portfolio website to showcase notable experiences and works.",
     skills: "NextJS, TailwindCSS",
+  },
+  {
+    slug: "bbb",
+    title: "Badminton Ballot Bot (2025)",
+    screenshots: ["/bbb/bbb-1.png"],
+    description:
+      "Telegram bot for sending ActiveSG badminton ballot links daily. Hosted on GCP.",
+    skills: "Google Cloud, Python",
+    link: ["https://github.com/jaey8den/badminton-ballot-bot", "Ballot Bot"],
+    points: [
+      "Called a telegram API to send ballot links to a group chat",
+      "Deployed the function on Google Cloud and created a scheduled job to run it daily",
+    ],
+    details: [
+      "I have a friend group who I play badminton with and naturally we have a telegram group to send ballot links and arrange players. However, everyone is lazy beyond belief (including me) and only two of my friends are actively sending the links each day, sometimes none when they are too busy. One day, they just asked, 'Can yall (there are a few SWEs) build a bot to send the links?'",
+      "The ActiveSG ballot links are mostly standardised, only a part of it varies with date and location. When timeslots are selected, the epochs are appended at the end of the URL. This is crucial as I want make it as convenient as possible for my lazy friends. With the right epochs appended, they won't need to manually select the timeslots and can simply click ballot.",
+      "The template is on my Github along with instructions. With a bot token and chat id, anyone can use it.",
+    ],
   },
   {
     slug: "victoria-chorale",
