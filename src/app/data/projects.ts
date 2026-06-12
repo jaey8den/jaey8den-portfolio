@@ -23,7 +23,7 @@ export const projects: Project[] = [
       "I immediately thought of parsing the PDF to extract the journey details such as the time stamps and locations. Combined with the fare structures and data from LTA, I can calculate/estimate the fares for each journey!",
       "It is hosted on Vercel for public use, since I don't think I'm only the only curious one. Be careful though, that's why they say curiousity killed the cat...",
     ],
-    skills: [],
+    skills: ["ReactJS, PDF Parsing"],
     link: [
       "https://concession-fare-checker.vercel.app/",
       "Concession Fare Checker",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
       "There were already dev tools like SoapUI and Postman, but I wanted something that could be used directly on the IDE or CLI. There's zeep too, but I felt like there were many small inconveniences that could be avoided.",
       "soaptest is basically a ergonomic improvement for zeep. You can read the PyPI documentation for more details, it is still currentlu under development with more features to be added.",
     ],
-    skills: [],
+    skills: ["CI/CD, GitHub Actions, PyPI, Python"],
     link: ["https://pypi.org/project/soaptest/", "soaptest"],
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Additionally, many job descriptions for SWE roles required exposure to ML technologies. At the top of my head, this project probably required some ML and computer vision techniques, and so I started working on it.",
       "It wasn't easy picking up something I have no prior experience with, but that's just part of the package. The annoying part was honestly the deployment. Deploying the API on Render was troublesome as it kept crashing presumably due to memory limits. Eventually I switch to Hugging Face spaces which was better suited for heavier programs and it finally worked. Builds and logs were much faster too.",
     ],
-    skills: ["ResNet18, OpenCV, FastAPI, Vercel, Hugging Face, Python, NextJS"],
+    skills: ["ResNet18, OpenCV, FastAPI, Hugging Face, Python, NextJS"],
     link: ["https://candlestick-matcher.vercel.app/", "Candlesticks Matcher"],
   },
   {

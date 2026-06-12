@@ -23,11 +23,11 @@ export const archives: Archive[] = [
     title: "JSON Editor",
     screenshots: ["/archives/jhe/jhe-1.png"],
     description: "A drag and drop JSON restructure tool.",
-    skills: "React",
+    skills: "ReactJS",
     link: ["https://json-hierarchy-editor.vercel.app/", "JSON Editor"],
     points: [
       "Created a drag and drop JSON restructure tool",
-      "Restructures all leaves simultaneously, allowing quick swaps among depths and key-value pairs",
+      "Supports swaps between depths and key-value pairs, restructuring all leaves simultaneously",
     ],
     details: [
       "Had a project where I was refactoring my JSON file to better fit my workflow. Having over 500 leaves made manual refactoring a real pain.",

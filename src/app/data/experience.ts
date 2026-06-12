@@ -18,7 +18,8 @@ export const experiences: Experience[] = [
       "Automated daily API calls, web scraping and data storage via GitHub Actions, maintaining an uninterrupted time-series dataset",
       "Parallelised ticker processing with multithreading and sharded SQLite databases with price data, improving runtime by 80%",
     ],
-    skills: "Financial Analysis, Python, SQlite",
+    skills:
+      "Financial Analysis, Github Actions, Multithreading, Python, SQLite",
   },
   {
     slug: "transcentech",
