@@ -14,9 +14,8 @@ export const projects: Project[] = [
     title: "Concession Fare Checker",
     screenshots: ["/cfc/cfc-1.png", "/cfc/cfc-2.png"],
     points: [
-      "Developed a fare checker to calculate the travel fares for journeys paid with concession",
       "Parsed SimplyGo’s monthly PDF statement for journey details, matching bus stop descriptions with codes fetched from LTA DataMall",
-      "Estimated travel distances between bus stops using coordinates, and sgraildata for track distances between train stations",
+      "Calculated travel fares by estimating distances between bus stops using coordinates, and an open-source rail dataset for track distances between train stations",
     ],
     details: [
       "There was a month where I had spend nearly $200 on public transport, which is honestly ridiculous. Concession pass was only $122, so it was a no brainer to buy it.",
@@ -35,9 +34,9 @@ export const projects: Project[] = [
     title: "soaptest",
     screenshots: ["/st/st-1.png"],
     points: [
-      "Released a python package for testing SOAP APIs, skipping raw XML and boilerplates",
-      "Exposed all WDSL operations as functions with the required parameters, simplifying tests with pytest",
-      "Automated CI tests and version tag matching with github actions, avoiding broken releases",
+      "Published a python package to PyPI for testing SOAP APIs, skipping raw XML and boilerplates",
+      "Automated integration tests and version tag matching with GitHub actions, avoiding broken releases",
+      "Exposed all WSDL operations as functions with the required parameters, simplifying tests with pytest",
     ],
     details: [
       "I saw a Reddit Post complaining about manual configuration for SOAP testing. It painfully reminded me of my previous job where I had the same experience.",
@@ -48,26 +47,11 @@ export const projects: Project[] = [
     link: ["https://pypi.org/project/soaptest/", "soaptest"],
   },
   {
-    slug: "jhe",
-    title: "JSON Editor",
-    screenshots: ["/jhe/jhe-1.png"],
-    points: [
-      "Created a drag and drop JSON restructure tool",
-      "Restructures all leaves simultaneously, allowing quick swaps among depths and key-value pairs",
-    ],
-    details: [
-      "Had a project where I was refactoring my JSON file to better fit my workflow. Having over 500 leaves made manual refactoring a real pain.",
-      "I asked Claude to do it the last time, now I can do it with this tool. The leaves need to a standardised schema for this to work optimally.",
-    ],
-    skills: [],
-    link: ["https://json-hierarchy-editor.vercel.app/", "JSON Editor"],
-  },
-  {
     slug: "cdsm",
     title: "Candlesticks Matcher",
     screenshots: ["/cdsm/cdsm-1.png"],
     points: [
-      "Attempted to identify candlestick patterns using vector embeddings and cosine similarity",
+      "Prototyped a candlestick pattern matcher using ResNet18, comparing vector embeddings and cosine similarity",
       "Implemented a sliding window to capture patches of an uploaded image for localised comparisons",
       "Processed uploaded charts with OpenCV to determine the window’s size and stride",
     ],
@@ -85,7 +69,7 @@ export const projects: Project[] = [
     screenshots: ["/cdg/cdg-1.png", "/cdg/cdg-2.png"],
     points: [
       "Generated crochet diagrams from text instructions using Konva",
-      "Designed to be fully client sides for data privacy and storage concerns, simplifying integration requirements for Wordpress",
+      "Built in HTML and fully client sided to keep user data local and enable embedding into WordPress",
     ],
     details: [
       "My friend, who is a crocheter, has to spend a significant amount of time to manually draw the diagrams after developing a crochet design. She tried to find existing services that could perform the conversion from text to diagram accurately, but could not. Thus, she proposed that there will be a demand for such a service, and commissioned me to develop such a program.",

@@ -11,6 +11,30 @@ export interface Archive {
 
 export const archives: Archive[] = [
   {
+    slug: "mac",
+    title: "Macro",
+    screenshots: ["/archives/mac/mac-1.png"],
+    description: "A macro program to execute recorded keystrokes.",
+    skills: "pyinstaller, tkinter",
+    link: ["https://github.com/jaey8den/macro", "Macro"],
+  },
+  {
+    slug: "jhe",
+    title: "JSON Editor",
+    screenshots: ["/archives/jhe/jhe-1.png"],
+    description: "A drag and drop JSON restructure tool.",
+    skills: "React",
+    link: ["https://json-hierarchy-editor.vercel.app/", "JSON Editor"],
+    points: [
+      "Created a drag and drop JSON restructure tool",
+      "Restructures all leaves simultaneously, allowing quick swaps among depths and key-value pairs",
+    ],
+    details: [
+      "Had a project where I was refactoring my JSON file to better fit my workflow. Having over 500 leaves made manual refactoring a real pain.",
+      "I asked Claude to do it the last time, now I can do it with this tool. The leaves need to a standardised schema for this to work optimally.",
+    ],
+  },
+  {
     slug: "website",
     title: "Portfolio Website (2026)",
     screenshots: ["/archives/website/web-1.png", "/archives/website/web-2.png"],
@@ -21,7 +45,7 @@ export const archives: Archive[] = [
   {
     slug: "bbb",
     title: "Badminton Ballot Bot (2025)",
-    screenshots: ["/bbb/bbb-1.png"],
+    screenshots: ["/archives/bbb/bbb-1.png"],
     description:
       "Telegram bot for sending ActiveSG badminton ballot links daily. Hosted on GCP.",
     skills: "Google Cloud, Python",
